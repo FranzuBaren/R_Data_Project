@@ -1,0 +1,33 @@
+**Conjugate Priors**
+
+If the posterior distributions *p(θ|x)* are in the same family as the prior probability distribution *p(θ)*, the prior and 
+posterior are then called conjugate distributions, and the prior is called a conjugate prior for the likelihood function. 
+It is indeed the case for Bernoulli and Beta distribution, the first describing a count process. Consider a random variable 
+which consists of the number of successes in *n* Bernoulli trials with unknown probability of success *q* in [0,1].  the usual conjugate prior is the beta distribution with parameters *(alpha,beta)*.
+One can check that a Beta distribution can in fact be approximated with a Gaussian for some opportune choice of the parameters
+
+We would need the following function in order to infer an approximated Beta Distribution with parameters (alpha,beta) starting from a Gaussian Distribution with parameters (mean,variance) 
+
+```
+Beta_Parameters <- function(mean, variance) {
+  alpha <- ((1 - mean) / variance - 1 / mean) * mean ^ 2
+  beta <- alpha * (1 / mean - 1)
+  return(Beta_Parameters = list(alpha = alpha, beta = beta))
+}
+```
+
+** Hypothesis Testing **
+
+Let us suppose that three candidate distribution follow some Beta distribution profile,representing the chance of having a valid campaign. We would like to discriminate which one is better than the other using some statistics. An easy way is to draw samplex 
+One can use the foudn distribution to check whether in cases A,B and C there is some statistical significance, first generating a high number of points from the two distributions
+```
+a_simulation=rbeta(10^6,a$alpha,a$beta)
+b_simulation=rbeta(10^6,b$alpha,b$beta)
+c_simulation=rbeta(10^6,c$alpha,c$beta)
+```
+then checking in how many cases points from A are greater from points from B (and all other combinations) by using the mean
+```
+mean(b_simulation>a_simulation)
+mean(c_simulation>b_simulation)
+mean(c_simulation>a_simulation)
+```
