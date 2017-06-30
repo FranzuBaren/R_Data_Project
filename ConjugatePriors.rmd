@@ -1,3 +1,10 @@
+**How to model hit or loss models**
+
+Hit or loss models can be modeled by discrete processes such as Bernoulli or Binomial processes, in which a variable testify whther the process has reached his goal (1) or hat missed it (0). Digital Marketing often has processes that reminds this binary possibility, such as the marketing study for an effective campaign.
+In the following, I took inspiration from a four parts article on how data science and reinforcement learning can be effectively, which tackle a concrete marketing analytics problem. The original article has been written by Roopam Upadhyay in his blog YOU CANalytics (complete link to the first part: http://ucanalytics.com/blogs/reinforcement-learning-and-artificial-intelligence-digital-marketing-case-study-example-part-1/).
+There a nice review of A/B testing and its integration with Bayesian models is presented.
+
+
 **Conjugate Priors**
 
 If the posterior distributions *p(θ|x)* are in the same family as the prior probability distribution *p(θ)*, the prior and 
@@ -16,7 +23,7 @@ Beta_Parameters <- function(mean, variance) {
 }
 ```
 
-** Hypothesis Testing **
+**Hypothesis Testing**
 
 Let us suppose that three candidate distribution follow some Beta distribution profile,representing the chance of having a valid campaign. We would like to discriminate which one is better than the other using some statistics. An easy way is to draw samplex 
 One can use the foudn distribution to check whether in cases A,B and C there is some statistical significance, first generating a high number of points from the two distributions
@@ -31,3 +38,13 @@ mean(b_simulation>a_simulation)
 mean(c_simulation>b_simulation)
 mean(c_simulation>a_simulation)
 ```
+
+**Role and advantage of Reinforcement Learning**
+Nowadays, software agents ought to take actions in one environment in order to maximise some obtained reward by iteratively interacting with the outer environment. By this back and fourth iteration, to an action it follows the delivery of some reward.
+The appeal of this dynamical learning in that a strategy results, for free, as the set of actions which lead to the maximum reward obtainable. This in turns changing the way systems to be no longer rule-based but automated in a way they can _adapt_ to the actual needs of a specific customer, i.e. tailoring the strategy to the need of a customer. The customer is indeed becoming the main character, while the focus on products themselves is getting less and less important.
+In addition to the link between [Thompson sampling] (https://en.wikipedia.org/wiki/Thompson_sampling), I met another paper "Cross Channel Optimized Marketing by Reinforcement Learning" which again addresses an online campaign
+[_]
+[lino Google!](http://google.com)
+
+
+
