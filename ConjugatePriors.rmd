@@ -42,9 +42,9 @@ mean(c_simulation>a_simulation)
 **Role and advantage of Reinforcement Learning**
 Nowadays, software agents ought to take actions in one environment in order to maximise some obtained reward by iteratively interacting with the outer environment. By this back and fourth iteration, to an action it follows the delivery of some reward.
 The appeal of this dynamical learning in that a strategy results, for free, as the set of actions which lead to the maximum reward obtainable. This in turns changing the way systems to be no longer rule-based but automated in a way they can _adapt_ to the actual needs of a specific customer, i.e. tailoring the strategy to the need of a customer. The customer is indeed becoming the main character, while the focus on products themselves is getting less and less important.
-In addition to the link between [Thompson sampling] (https://en.wikipedia.org/wiki/Thompson_sampling), I met another paper "Cross Channel Optimized Marketing by Reinforcement Learning" which again addresses an online campaign
-[_]
-[lino Google!](http://google.com)
+In addition to the link between [Thompson Sampling](http://en.wikipedia.org/wiki/Thompson_sampling) and [Reinforcement Learning](https://en.wikipedia.org/wiki/Reinforcement_learning), I met the other paper [Cross Channel Optimized Marketing by Reinforcement Learning](http://www.research.ibm.com/people/n/nabe/kdd04AVAS.pdf) which again addresses an online email campaign this time caring about life time of customers in terms of a Markov Decision Process.
+Recall that Markov decision processes (MDPs) provide a mathematical framework for modeling decision making in situations where outcomes are partly random and partly under the control of a decision maker.
+
 
 
 
