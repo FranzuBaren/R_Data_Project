@@ -36,7 +36,7 @@ To reject the Null Hypothesis we need a p-value that is lower than the selected 
 
 
 **Hypothesis Testing**
-
+Usually in a marketing analysis n there are running candidates (i.e. possible campaigns) that are competing. 
 Let us suppose that three candidate distribution follow some Beta distribution profile,representing the chance of having a valid campaign. We would like to discriminate which one is better than the other using some statistics. An easy way is to draw samplex 
 One can use the foudn distribution to check whether in cases A,B and C there is some statistical significance, first generating a high number of points (10^6) from the two distributions
 ```
