@@ -23,21 +23,37 @@ Beta_Parameters <- function(mean, variance) {
 }
 ```
 
+**Raw A/B Testing**
+We say that a result of a test is statistically significant if it is unlikely to have occurred by chance alone in a given setting.
+We decide on two rival hypotheses – the Null Hypothesis and the Alternative Hypothesis.
+The Null Hypothesis is the assumption that there is no relationship between the values. Usually, we set it to the exact opposite of what we would like to see. When expecting a higher conversion rate on the new landing page, use a Null Hypothesis that the mean conversion rates are equal.
+The Alternative Hypothesis is what we must assume once the Null Hypothesis is rejected. There are many types of Alternative Hypotheses, but in most A/B tests it is usually enough to know the two values are different. In these cases we will use a Two-tailed alternative hypothesis. A One-tailed alternative allows us to specify the direction of inequality.
+The result of the test is either to reject the Null Hypothesis while accepting the Alternative Hypothesis or conclude that there is not enough evidence to reject the Null Hypothesis. Note that we have no way of confirming the Null. If you fail to reject the hypothesis that there is no difference in Conversion Rates between two ads, you should not conclude that the two conversion rates are equal. Maybe your sample was too small to detect the difference?
+We select a Significance Level – the probability of detecting an effect that is not there. Stat-gurus call it the probability of a Type I Error or the probability of a False-Positive detection (read more on types of error here). Usually, we select a number that is less or equal than 5% (hence we have a 5% chance of making a mistake when rejecting the Null).
+We should also select the Power of Test, which is the probability of finding an effect that exist. This is also called the probability of a True-Positive. Commonly chosen values are 80% or 90%.
+We calculate the p-value from the Test Statistic. It is the probability that the observed result is due to chance assuming the Null Hypothesis holds. P-value is what you usually see reported instead of the Test Statistic because it is easy to interpret.
+To reject the Null Hypothesis we need a p-value that is lower than the selected Significance Level.
+
+
 **Hypothesis Testing**
 
 Let us suppose that three candidate distribution follow some Beta distribution profile,representing the chance of having a valid campaign. We would like to discriminate which one is better than the other using some statistics. An easy way is to draw samplex 
-One can use the foudn distribution to check whether in cases A,B and C there is some statistical significance, first generating a high number of points from the two distributions
+One can use the foudn distribution to check whether in cases A,B and C there is some statistical significance, first generating a high number of points (10^6) from the two distributions
 ```
 a_simulation=rbeta(10^6,a$alpha,a$beta)
 b_simulation=rbeta(10^6,b$alpha,b$beta)
 c_simulation=rbeta(10^6,c$alpha,c$beta)
 ```
-then checking in how many cases points from A are greater from points from B (and all other combinations) by using the mean
+then checking in how many cases points from A are greater from points from B (and all other combinations) by using the a pointwise comparison of the sampled points
 ```
 mean(b_simulation>a_simulation)
 mean(c_simulation>b_simulation)
 mean(c_simulation>a_simulation)
 ```
+It is evident from here
+
+
+
 
 **Role and advantage of Reinforcement Learning**
 Nowadays, software agents ought to take actions in one environment in order to maximise some obtained reward by iteratively interacting with the outer environment. By this back and fourth iteration, to an action it follows the delivery of some reward.
