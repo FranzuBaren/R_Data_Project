@@ -1,0 +1,6 @@
+Original Source [Analysis of Thompson Sampling for the Multi-armed Bandit Problem](http://proceedings.mlr.press/v23/agrawal12/agrawal12.pdf)
+
+**Thompson Sampling and Multi-Armed Bandit Problem**
+
+The notion of regret can be useful to analyze how Thompson Sampling, proved to be a close to optimal solution of 
+the multi-armed bandit problem, effectively works.
